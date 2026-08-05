@@ -6,31 +6,33 @@ import { SourceWhisper } from '@/components/SourceWhisper';
 import { faqPageJsonLd } from '@/lib/jsonld';
 import { FAQS, SITE } from '@/lib/site';
 
-const ARSENAL_TEASER = [
+const CAPABILITIES = [
   {
-    name: 'The Content Engine',
-    text: 'A production system on your domain — server-rendered, schema-rich, source-cited articles engineered to be quoted, not just crawled.',
+    name: 'It writes the thing',
+    text: 'Give it a subject and it researches, writes and publishes the finished piece. Every figure traced to a named source and a date.',
   },
   {
-    name: 'AI Citation Tracking',
-    text: 'Daily checks across Gemini, Perplexity and Tavily: when an AI answers a question in your market, we know whether it cited you — and if not, whom.',
+    name: 'Then it keeps watch',
+    text: 'Where you rank. Which AI assistants are quoting you, and who they quote instead when it isn’t you.',
   },
   {
-    name: 'Rank Warfare',
-    text: 'Keyword-gap analysis against the brands holding your territory, rank tracking with teeth, and a content pipeline aimed at every gap.',
+    name: 'It turns readers into enquiries',
+    text: 'Forms, scoring, and routing straight to your inbox. You find out who visited, who got in touch, and what it was worth.',
   },
   {
-    name: 'The Pixel',
-    text: 'Attribution down to the click. Every visit, every conversion, every AI referral — measured, so nobody has to believe anything on faith.',
+    name: 'And it argues with itself',
+    text: 'Two versions of a page run against each other. The winner stays up. Nobody has to have an opinion about it in a meeting.',
   },
 ] as const;
+
+const DISCIPLINES = ['SEO', 'AEO', 'GEO', 'E-E-A-T', 'Attribution'] as const;
 
 /* Real telemetry (prod, 2026-08-05): 139 recorded engine answers for Client 020 between
    2026-07-31 and 2026-08-05, rival citations named per answer. Refresh at each deploy. */
 const PROOF_STRIP = [
-  { label: 'Client 020', stat: '139 answers interrogated', note: 'first six days on watch — every reply archived with excerpt and date' },
-  { label: 'The rivals', stat: 'Named and dated', note: 'every citation an engine gives a competitor becomes a work order' },
-  { label: 'The rule', stat: 'Zero invented numbers', note: 'this strip is telemetry or it is silence' },
+  { label: 'Client 020', stat: '139 answers logged', note: 'in the first six days, every one saved with the date and what was said' },
+  { label: 'Four rivals', stat: 'Named, not implied', note: 'we know exactly who the assistants recommend instead. So does the client' },
+  { label: 'House rule', stat: 'No made-up numbers', note: 'if it is on this page, you can go look at the row it came from' },
 ] as const;
 
 const COMPARISON: readonly {
@@ -41,33 +43,33 @@ const COMPARISON: readonly {
 }[] = [
   {
     dim: 'What you actually get',
-    diy: 'A blog you stop updating in March',
-    typical: 'A monthly PDF of recommendations',
-    twb: 'A running content system on your domain, publishing and improving weekly',
+    diy: 'A blog with three posts, the newest from March',
+    typical: 'A PDF of things you should do',
+    twb: 'A system on your site that publishes every week whether or not anyone chases it',
   },
   {
-    dim: 'AI answer engines (GEO)',
-    diy: 'Invisible',
+    dim: 'Getting named by AI',
+    diy: 'Not happening',
     typical: '“We’re looking into AI”',
-    twb: 'Daily citation tracking across Gemini, Perplexity and Tavily — with receipts',
+    twb: 'Checked daily against Gemini, Perplexity and Tavily, and written down either way',
   },
   {
-    dim: 'Facts and sources',
-    diy: 'Whatever the intern found',
-    typical: 'Recycled top-10 listicles',
-    twb: 'Every statistic sourced, dated and attributable — engines and lawyers both approve',
+    dim: 'Where the facts come from',
+    diy: 'Whoever had ten minutes',
+    typical: 'The same top-ten listicle everybody copies',
+    twb: 'A named publisher and a date on every number, or it doesn’t ship',
   },
   {
-    dim: 'Client load',
+    dim: 'How many clients',
     diy: 'You, at 9 p.m., after a full day of real work',
-    typical: 'As many logos as sales can close',
-    twb: 'Twelve. Ever. When it’s full, it’s full',
+    typical: 'However many sales can close',
+    twb: 'Twelve. When it’s full, it’s full',
   },
   {
-    dim: 'Accountability',
-    diy: 'None',
-    typical: 'Traffic screenshots',
-    twb: 'Rankings, citations and conversions in one ledger you can audit',
+    dim: 'How you check up on us',
+    diy: 'Squinting at Google yourself',
+    typical: 'A screenshot of a traffic graph',
+    twb: 'Your own login, the same numbers we see, whenever you want them',
   },
 ];
 
@@ -98,9 +100,7 @@ export default function HomePage() {
               {hero.sub}
             </p>
             <div className="rise rise-3 mt-10 flex flex-wrap items-center gap-4">
-              <Link href="/apply" className="btn-primary">
-                Request consideration
-              </Link>
+              <Link href="/apply" className="btn-primary">Apply for a seat</Link>
               <Link href="/services" className="btn-ghost">
                 See the arsenal
               </Link>
@@ -121,21 +121,20 @@ export default function HomePage() {
           <p className="kicker">What this is</p>
           <div className="mt-6 max-w-prose space-y-5 text-lg leading-relaxed text-bone">
             <p>
-              <strong className="font-semibold">{SITE.name}</strong> is a private SEO, GEO and
-              AEO practice headquartered in Michigan and working worldwide. We accept a fixed
-              cohort of twelve clients and make each one the answer in its market: ranked at
-              the top of Google, quoted by AI answer engines like ChatGPT, Perplexity and
-              Gemini, and measured all the way down to the conversion.
+              <strong className="font-semibold">{SITE.name}</strong> is a small SEO, GEO and AEO
+              shop in Michigan. We work with twelve businesses at a time and get each one found
+              first: top of Google, named inside AI assistants like ChatGPT and Perplexity, and
+              tracked all the way to the phone ringing.
             </p>
             <p className="text-bone-dim">
-              Most of our clients are simply the best at what they do — and too busy doing it
-              to fight Google about it. That is the whole point of us.
+              Most of our clients are the best at what they do and too busy doing it to argue
+              with Google. That’s the whole point of us.
             </p>
             <p className="text-bone-dim">
-              We are not an agency in the usual sense. There is no pricing page, no sales team,
-              and no onboarding funnel. There is an application, a review, and — for the few —
-              a seat. Twelve seats isn’t a velvet rope for show: it is how you get the actual
-              pack working on your business instead of an account manager reading you a report.
+              There’s no pricing page here and nobody will call you twice. You apply, we read it,
+              and either a seat is open or it isn’t. Twelve isn’t a velvet rope. It’s the number
+              where you still get the five of us instead of an account manager reading you a
+              report over the phone.
             </p>
           </div>
         </div>
@@ -144,12 +143,16 @@ export default function HomePage() {
       {/* ——— The arsenal, teased ——— */}
       <section className="rule reveal">
         <div className="mx-auto max-w-6xl px-6 py-20">
-          <p className="kicker">The arsenal</p>
-          <h2 className="mt-4 font-display text-3xl md:text-4xl">
-            Four instruments. One outcome: territory.
+          <p className="kicker">What you’re actually hiring</p>
+          <h2 className="mt-4 max-w-3xl font-display text-3xl md:text-4xl">
+            An entire growth department, in one system.
           </h2>
+          <p className="mt-5 max-w-2xl leading-relaxed text-bone-dim">
+            We built the thing we wanted to use, then hired five people to run it properly. You
+            get both.
+          </p>
           <div className="mt-12 grid gap-px bg-night-line md:grid-cols-2">
-            {ARSENAL_TEASER.map((item, i) => (
+            {CAPABILITIES.map((item, i) => (
               <div key={item.name} className="group bg-night p-8 transition-colors hover:bg-night-soft">
                 <p className="font-mono text-xs text-bone-faint">0{i + 1}</p>
                 <h3 className="mt-3 font-display text-xl group-hover:text-blood-bright">
@@ -159,8 +162,15 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2">
+            {DISCIPLINES.map((d) => (
+              <span key={d} className="font-mono text-[11px] uppercase tracking-[0.25em] text-bone-faint">
+                {d}
+              </span>
+            ))}
+          </div>
           <Link href="/services" className="wolf-link mt-8 inline-block font-mono text-xs uppercase tracking-widest">
-            Full inventory →
+            All of it, in detail →
           </Link>
         </div>
       </section>
@@ -170,7 +180,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6 py-20">
           <p className="kicker">Proof, redacted</p>
           <h2 className="mt-4 font-display text-3xl md:text-4xl">
-            Clients are numbered, not named. Results aren’t shy.
+            We keep client names quiet. The numbers we’ll show anyone.
           </h2>
           <div className="mt-12 grid gap-px bg-night-line md:grid-cols-3">
             {PROOF_STRIP.map((p) => (
@@ -194,7 +204,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6 py-20">
           <p className="kicker">Know your options</p>
           <h2 className="mt-4 font-display text-3xl md:text-4xl">
-            Doing it yourself, hiring a typical agency, or joining the pack
+            Do it yourself, hire the usual agency, or come here
           </h2>
           <div className="mt-12 overflow-x-auto">
             <table className="w-full min-w-[720px] border-collapse text-left text-sm">
@@ -246,18 +256,16 @@ export default function HomePage() {
             <span className="text-blood-bright">We take territory.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-bone-dim">
-            If your brand deserves the top of its market — and can prove it — request
-            consideration for the next intake.
+            Two seats are open. If you think your business belongs at the top of your patch,
+            tell us why. It takes about four minutes.
           </p>
           <div className="mt-10">
-            <Link href="/apply" className="btn-primary">
-              Request consideration
-            </Link>
+            <Link href="/apply" className="btn-primary">Apply for a seat</Link>
           </div>
         </div>
       </section>
 
-      <SourceWhisper text="Five FAQs above, one FAQPage schema, zero discrepancies. That is the whole trick, done properly, several hundred times." />
+      <SourceWhisper text="Every question above is in the structured data too, word for word. That is most of the trick. The rest is doing it a few hundred more times without getting bored." />
     </>
   );
 }

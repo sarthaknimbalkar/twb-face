@@ -10,7 +10,7 @@ export const SITE = {
   email: 'consideration@thewoofback.com',
   region: 'Michigan, United States',
   description:
-    'The Woofback is a private SEO, GEO and AEO practice. We accept a fixed cohort of clients and make them the answer — on Google, and inside AI answer engines like ChatGPT, Perplexity and Gemini.',
+    'The Woofback is a small SEO, GEO and AEO shop in Michigan. We work with twelve businesses at a time and get them found first on Google and quoted inside AI assistants like ChatGPT, Perplexity and Gemini.',
 } as const;
 
 export const COHORT = {
@@ -24,7 +24,7 @@ export const NAV = [
   { href: '/proof', label: 'Proof' },
   { href: '/pack', label: 'The Pack' },
   { href: '/notes', label: 'Field Notes' },
-  { href: '/apply', label: 'Request Consideration' },
+  { href: '/apply', label: 'Apply' },
 ] as const;
 
 export interface Faq {
@@ -36,26 +36,26 @@ export interface Faq {
 export const FAQS: readonly Faq[] = [
   {
     q: 'What is the difference between SEO, GEO and AEO?',
-    a: 'SEO (search engine optimization) earns rankings on Google and Bing. AEO (answer engine optimization) earns the featured answer — the block a search engine reads out. GEO (generative engine optimization) earns citations inside AI assistants like ChatGPT, Perplexity and Gemini, which now answer questions before a user ever sees a results page. The Woofback practices all three as one discipline, because your customers no longer distinguish between them.',
+    a: 'SEO gets you ranked on Google. AEO gets you into the answer box at the top, the one people read instead of clicking anything. GEO gets you quoted inside AI assistants like ChatGPT, Perplexity and Gemini, which increasingly answer the question before anyone sees a results page at all. We treat the three as one job, because your customers have no idea there is a difference. They just ask, and somebody gets named.',
   },
   {
-    q: 'Why does The Woofback only take twelve clients?',
-    a: 'Because we do not sell reports — we take territory. Every client gets a dedicated content engine, its own editorial voice, live citation tracking across AI engines, and a team that knows the account cold. That does not scale to hundreds of logos, and we refuse to pretend it does. When the cohort is full, it is full.',
+    q: 'Why only twelve clients?',
+    a: 'Because of what a seat actually includes. You get your own content engine, your own writing voice, daily citation tracking, and five people who know your business without looking it up. We have tried to imagine running that for eighty clients and the honest answer is that it turns into a report-writing business. So the number stays at twelve, and when it is full it is full.',
   },
   {
     q: 'Is this only for big brands?',
-    a: 'No — mostly the opposite. The cohort is largely local and regional businesses that are excellent at what they do and want to be the first name people (and their phones) find. You bring the reputation; making the internet reflect it is our job, jargon included. Size has never been the entry requirement. Being worth putting at the top is.',
+    a: 'Mostly the opposite. Most of our clients are local and regional businesses that are genuinely the best in their area and quietly furious that the internet has not noticed. You bring the reputation. Making Google and the AI assistants reflect it is our end of the deal, jargon included. Size was never the entry requirement.',
   },
   {
-    q: 'Do you work with businesses outside Michigan?',
-    a: 'Yes. The pack is headquartered in Michigan and hunts everywhere. Search engines and AI answer engines are global; so is the cohort. Local, national or international — the method is the same, the standard is the same.',
+    q: 'Do you work outside Michigan?',
+    a: 'Yes. We are based in Michigan and take work anywhere. Search engines do not care where our office is, and neither do the AI assistants. Local, national, or somewhere we have to look up on a map, the method does not change.',
   },
   {
-    q: 'How is this different from a typical SEO agency?',
-    a: 'A typical agency audits, recommends and reports. The Woofback operates: we build and run a production content system on your domain — server-rendered, schema-rich, source-cited articles engineered to be quoted by both search engines and AI models — then track every ranking and every AI citation daily and feed what works back into the engine. You are not buying advice. You are buying outcomes with telemetry.',
+    q: 'How is this different from a normal SEO agency?',
+    a: 'Most agencies audit your site, hand you recommendations, and leave the actual work to you. We do the work. We build and run the whole publishing system on your domain, write the articles, source every claim, then check every day whether it moved a ranking or earned a mention inside an AI answer. What worked goes back into the pipeline. You are hiring an operator, not a consultant.',
   },
   {
     q: 'How do I become a client?',
-    a: 'You apply. Tell us your domain, your market and what winning looks like. We review every application against one question: can we take this brand to the top of its territory? If the answer is yes and a seat is open, we talk. If not, we decline — politely, and without wasting your quarter.',
+    a: 'You apply, which takes about four minutes. Tell us your site, your market, and what a good year looks like. All five of us read it and answer one question: can we take you to the top of your patch? If the answer is yes and a seat is open, we talk. If it is no, you hear that quickly, with a reason, and you can get on with your quarter.',
   },
 ] as const;

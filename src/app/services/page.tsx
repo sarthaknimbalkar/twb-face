@@ -19,51 +19,51 @@ interface Weapon {
 const WEAPONS: readonly Weapon[] = [
   {
     no: '01',
-    name: 'The Content Engine',
+    name: 'It writes and publishes',
     claim: 'A publishing system, not a blog.',
     detail: [
-      'Server-rendered, crawlable HTML on your own domain — never a client-side app that search engines and AI crawlers half-read.',
-      'Every article opens by answering the query in the first two hundred words, carries strict heading structure, comparison and data tables, and JSON-LD that matches the visible text exactly.',
-      'Every statistic is sourced, dated and attributable. If a fact cannot be traced to a publisher and a date, it does not ship.',
-      'Freshness is tracked; anything approaching ninety days stale gets refreshed before an engine notices it aged.',
+      'Give it a subject and it does the research, writes the piece, and puts it live on your site, finished.',
+      'Every figure comes with the publisher who reported it and the date they reported it. If we can’t trace a number, it doesn’t go in.',
+      'Pages are plain server-rendered HTML, so Google and the AI crawlers get the whole thing instead of half of it.',
+      'Anything that starts going stale gets rewritten before it costs you a position.',
     ],
-    aside: 'Engines quote what they can verify. So we make everything verifiable.',
+    aside: 'Machines quote what they can check. So we make everything checkable.',
   },
   {
     no: '02',
-    name: 'AI Citation Tracking',
-    claim: 'GEO with receipts.',
+    name: 'Then it keeps watch',
+    claim: 'Every day, on the record.',
     detail: [
-      'Daily automated checks of the questions your market asks — put to Gemini, Perplexity and Tavily, live.',
-      'Every answer is recorded: did the engine cite you, cite a rival, or hallucinate a third option?',
-      'Trend lines per engine, per question, per client — so “we’re winning in AI search” is a chart, not a feeling.',
-      'When a rival takes a citation you should own, that gap becomes next week’s content order.',
+      'We put your customers’ questions to Gemini, Perplexity and Tavily every day and write down what came back.',
+      'Named you? Named a competitor? Made something up entirely? All three get logged, with the date and the wording.',
+      'When a competitor takes a mention that should have been yours, that becomes a job on next week’s list.',
+      'So “we’re doing well in AI search” is a chart you can open, not a thing we say on a call.',
     ],
-    aside: 'Your customers ask machines for recommendations now. We make sure of the reply.',
+    aside: 'People ask assistants who to hire now. Somebody gets named. We would like it to be you.',
   },
   {
     no: '03',
-    name: 'Rank Warfare',
-    claim: 'Territory is measured in positions.',
+    name: 'It hunts for gaps',
+    claim: 'Positions, not impressions.',
     detail: [
-      'Keyword-gap analysis against the brands actually holding your ground — what they rank for that you don’t, and which of it converts.',
-      'Question mining from live search results: the exact things people ask, harvested and answered before rivals notice the question exists.',
-      'Rank tracking that feeds the engine: movement in, content out, position up.',
-      'Local and geographic targeting where it counts — from Michigan to anywhere the cohort hunts.',
+      'We pull everything your competitors rank for that you don’t, then work out which of it is actually worth having.',
+      'We mine the real questions people type, including the ones nobody in your industry has bothered to answer yet.',
+      'Rankings feed straight back into what gets written next, so the pipeline points at whatever is currently losing.',
+      'Local matters too. Being first in your county beats being twelfth nationally.',
     ],
-    aside: 'We do not report on the war. We fight it, weekly.',
+    aside: 'Most agencies report on the fight. We would rather be in it.',
   },
   {
     no: '04',
-    name: 'The Pixel',
-    claim: 'Attribution, down to the click.',
+    name: 'It follows the money',
+    claim: 'From the click to the phone call.',
     detail: [
-      'A lightweight first-party beacon on your pages — every visit, source and conversion in one ledger.',
-      'AI-referral detection: when Perplexity or ChatGPT sends a buyer, it is labeled as such, not lost in “direct”.',
-      'Ad-click capture wired through to conversions, so paid and organic are judged by the same scoreboard.',
-      'You audit the numbers. Faith is for other agencies.',
+      'A small tag on your pages ties visits, enquiries and conversions together in one place.',
+      'When an AI assistant sends someone your way, it gets labelled as such instead of vanishing into “direct” like it does everywhere else.',
+      'Forms, lead scoring and routing land the enquiry in your inbox or CRM without anybody re-typing it.',
+      'And two versions of a page can run against each other, with the winner kept automatically.',
     ],
-    aside: 'The only marketing metric that matters is the one you can subpoena.',
+    aside: 'You get the same login we use. Check it at midnight if you like.',
   },
 ];
 
@@ -72,11 +72,13 @@ export default function ServicesPage() {
     <div className="mx-auto max-w-6xl px-6 pb-8 pt-24">
       <p className="kicker">The arsenal</p>
       <h1 className="mt-6 max-w-3xl font-display text-5xl leading-[1.05] tracking-tight md:text-6xl">
-        Four instruments, kept sharp for twelve clients.
+        An entire growth department, in one system.
       </h1>
       <p className="mt-6 max-w-2xl text-lg leading-relaxed text-bone-dim">
-        Everything below runs as one system. That is the point — and the reason the cohort is
-        small. You cannot operate this for a hundred logos. We never intend to.
+        It all runs as one thing, which is the point. Four separate tools that don’t talk to
+        each other is how most of this gets sold, and it’s why most of it doesn’t work. It also
+        explains the twelve: you can’t run this properly for a hundred businesses, and we’d
+        rather not find out what happens if we try.
       </p>
 
       <div className="mt-20 space-y-20">
@@ -106,11 +108,10 @@ export default function ServicesPage() {
 
       <div className="rule mt-20 py-16 text-center">
         <p className="mx-auto max-w-xl text-bone-dim">
-          The arsenal is not sold piecemeal. A seat in the cohort gets all of it.
+          None of it is sold separately. A seat gets you all four and the five people who run
+          them.
         </p>
-        <Link href="/apply" className="btn-primary mt-8">
-          Request consideration
-        </Link>
+        <Link href="/apply" className="btn-primary mt-8">Apply for a seat</Link>
       </div>
     </div>
   );

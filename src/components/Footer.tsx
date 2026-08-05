@@ -15,13 +15,13 @@ export function Footer() {
               </Link>
             </p>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-bone-dim">
-              A private SEO · GEO · AEO practice. Headquartered in {SITE.region}. Hunting
-              everywhere.
+              SEO, GEO and AEO for twelve businesses at a time. Based in {SITE.region}, working
+              anywhere.
             </p>
             <p className="mt-3 text-sm text-bone-faint">
-              We say no more often than yes — kindly.{' '}
+              We say no more often than yes, and quickly.{' '}
               <Link href="/decline" className="wolf-link underline decoration-night-line underline-offset-4">
-                See what that looks like.
+                Here’s one of the letters.
               </Link>
             </p>
           </div>

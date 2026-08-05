@@ -18,14 +18,14 @@ export default function WolvesPage() {
       </h1>
       <div className="mt-8 max-w-prose space-y-4 leading-relaxed text-bone-dim">
         <p>
-          One name, two natures. The Woofback smiles at your customers, holds the door, says
-          please. The wolves are the thing rival agencies check at 2 a.m. to see what just
-          outranked them. You hired both; only one of them writes the invoices.
+          One name, two moods. The Woofback is polite to your customers and holds the door. The
+          wolves are what the competition’s agency is looking at, at 2 a.m., trying to work out
+          what just went past them. You get both for the same money.
         </p>
         <p>
-          This page is not in the sitemap. It is not indexed. You found it because you read
-          footers, hover things, and view source — which means you evaluate vendors the way we
-          evaluate everything. You should probably apply.
+          This page isn’t in the sitemap and isn’t indexed. You found it because you read
+          footers and hover over things, which means you check people out properly before you
+          hire them. So do we. You’d fit in.
         </p>
       </div>
       <Link href="/apply" className="btn-primary mt-10">

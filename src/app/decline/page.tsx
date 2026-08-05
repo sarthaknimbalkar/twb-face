@@ -16,9 +16,9 @@ export default function DeclinePage() {
         Most agencies frame their wins. We framed a rejection.
       </h1>
       <p className="rise rise-2 mt-6 max-w-2xl text-lg leading-relaxed text-bone-dim">
-        We say no more often than yes — but the no comes fast, kind, and with a real reason.
-        Names redacted, wording verbatim from the house template, because how a practice says
-        no tells you more than how it says yes.
+        We say no more often than we say yes. When we do, it comes quickly and with an actual
+        reason. This is a real one, names taken out. You learn more about a firm from how it
+        turns people down than from anything on its homepage.
       </p>
 
       {/* The letter, framed like the artifact it is. */}
@@ -53,15 +53,15 @@ export default function DeclinePage() {
           </p>
         </div>
         <p className="mt-10 border-t border-night-line pt-6 font-mono text-[11px] uppercase tracking-widest text-bone-faint">
-          Sent day 4 of review · no invoice, no upsell, no “growth call” · the seat went to
-          someone we could take to the top
+          Sent on day four · no invoice, no upsell, no “quick growth call” · the seat went to
+          someone we could actually help
         </p>
       </div>
 
       <div className="rule mt-20 py-16 text-center">
         <p className="mx-auto max-w-xl text-bone-dim">
-          If you read that and thought “I want the version where they say yes” — that letter
-          is shorter. It just says when we start.
+          If you read that and thought “I’d like the other letter”: it’s much shorter. It says
+          when we start.
         </p>
         <Link href="/apply" className="btn-primary mt-8">
           Apply anyway

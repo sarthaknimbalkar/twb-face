@@ -1,5 +1,8 @@
 import { COHORT, FAQS, SITE } from '@/lib/site';
 
+// Emitted at build time so it survives static export.
+export const dynamic = 'force-static';
+
 /**
  * llms.txt — the answer-engine front door. Plain markdown a model can ingest whole;
  * the practice's own AEO rule applied to the practice itself.

@@ -16,48 +16,48 @@ interface Step {
 const STEPS: readonly Step[] = [
   {
     id: 'name',
-    label: 'The applicant',
-    prompt: 'Who is asking?',
+    label: 'You',
+    prompt: 'Who’s asking?',
     placeholder: 'Your name',
     type: 'text',
     required: true,
-    aside: 'Applications are read by all five of us. Not by a form-processing intern — we don’t have one.',
+    aside: 'All five of us read these. There’s no intern sorting them into folders, because there’s no intern.',
   },
   {
     id: 'email',
-    label: 'The channel',
-    prompt: 'Where does the verdict go?',
-    placeholder: 'you@yourdomain.com',
+    label: 'Where to reply',
+    prompt: 'Where should the answer go?',
+    placeholder: 'you@yourbusiness.com',
     type: 'email',
     required: true,
-    aside: 'Every application gets an answer. Not every answer is yes.',
+    aside: 'Everyone gets an answer. Not everyone gets a yes.',
   },
   {
     id: 'domain',
-    label: 'The territory',
-    prompt: 'Which domain are we assessing?',
-    placeholder: 'https://…',
+    label: 'The site',
+    prompt: 'What’s your website?',
+    placeholder: 'yourbusiness.com',
     type: 'url',
     required: true,
-    aside: 'We will read it the way the engines do — source first, promises last.',
+    aside: 'We’ll go and look at it properly. Don’t tidy it up first, we’d rather see the real thing.',
   },
   {
     id: 'referral',
-    label: 'The introduction',
-    prompt: 'Who sent you?',
-    placeholder: 'A name, a client, or “nobody — I hunt alone”',
+    label: 'Introductions',
+    prompt: 'Anyone send you our way?',
+    placeholder: 'A name, or “found you myself”',
     type: 'text',
     required: false,
-    aside: 'Referred dossiers are read first. Unreferred dossiers are read anyway; we like nerve.',
+    aside: 'Referrals get read first. Everyone else still gets read, and turning up unannounced is its own kind of recommendation.',
   },
   {
     id: 'winning',
-    label: 'The objective',
-    prompt: 'What does winning look like?',
-    placeholder: 'The market you want, the rivals holding it, and why you deserve it more.',
+    label: 'The point of all this',
+    prompt: 'What would a good year look like?',
+    placeholder: 'What you want more of, and who’s currently getting it instead.',
     type: 'textarea',
     required: true,
-    aside: 'Plain words work best. “Booked out three months” and “the first name people find in my county” are both perfect answers.',
+    aside: 'Plain words are better than clever ones. “Booked out three months” is a perfect answer. So is “the first name people find round here”.',
   },
 ] as const;
 
@@ -112,14 +112,15 @@ export function DossierForm() {
           <p className="font-mono text-2xl uppercase tracking-[0.2em] text-blood-bright">Sealed</p>
         </div>
         <p className="mx-auto mt-8 max-w-sm leading-relaxed text-bone-dim">
-          The pack reads applications on Fridays. You will hear from us either way.
+          We read these on Fridays. You’ll hear back either way, and it won’t take a fortnight.
         </p>
         {/* TEMPLATE: until the platform's lead endpoint is wired, sealing hands off to email. */}
         <a href={mailto} className="btn-primary mt-8">
           Send it in
         </a>
         <p className="mt-6 font-mono text-[11px] uppercase tracking-widest text-bone-faint">
-          Delivery opens your mail client — the seal means nothing until it is sent.
+          This opens your email with the answers filled in. Nothing has reached us until you hit
+          send.
         </p>
       </div>
     );
@@ -183,7 +184,7 @@ export function DossierForm() {
           onClick={() => setStepIdx((i) => Math.max(0, i - 1))}
           className={`font-mono text-xs uppercase tracking-widest text-bone-faint transition-colors hover:text-bone ${stepIdx === 0 ? 'invisible' : ''}`}
         >
-          ← Back
+          ← Back
         </button>
         <button type="button" onClick={advance} disabled={!canAdvance} className="btn-primary disabled:cursor-not-allowed disabled:opacity-40">
           {last ? 'Seal it' : 'Continue'}

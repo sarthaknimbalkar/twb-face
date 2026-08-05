@@ -21,12 +21,12 @@ export default function ApplyPage() {
           </h1>
           <div className="rise rise-2 mt-6 max-w-prose space-y-4 leading-relaxed text-bone-dim">
             <p>
-              We read every application against one question: can we take this business to the
-              top of its territory? If yes, and a seat is open, we talk. If not, we say so —
-              kindly, quickly, and without wasting your quarter.
+              All five of us read it and answer one question: can we get this business to the
+              top of its patch? If yes, and there’s a seat, we’ll want to talk. If no, you’ll
+              hear that quickly, with the reason, and you can get on with your quarter.
             </p>
             <p>
-              Plain answers beat fancy ones. Knowing your business is the qualification — the
+              Plain answers beat clever ones. Knowing your business is the qualification. The
               jargon is our department.
             </p>
           </div>
@@ -34,7 +34,7 @@ export default function ApplyPage() {
             <Scarcity />
           </div>
           <p className="rise rise-4 mt-10 text-sm text-bone-faint">
-            Curious what a no looks like?{' '}
+            Want to see what a no looks like first?{' '}
             <Link href="/decline" className="wolf-link underline decoration-night-line underline-offset-4">
               We published one of those too.
             </Link>

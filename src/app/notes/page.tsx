@@ -22,23 +22,23 @@ interface Note {
 const QUEUE: readonly Note[] = [
   {
     code: 'FN-001',
-    title: 'What Perplexity actually cites: 90 days of watching it choose',
+    title: 'What Perplexity actually quotes, after 90 days of asking it',
     summary:
-      'We ask the engines our clients’ questions every day and log every citation. The pattern in what gets quoted — structure, sourcing, freshness — is not what most agencies are selling.',
+      'We put our clients’ questions to the assistants every day and keep the answers. There’s a pattern in what gets quoted, and it isn’t the thing most agencies are currently selling.',
     status: 'being written',
   },
   {
     code: 'FN-002',
-    title: 'The answer block: why the first 200 words decide everything',
+    title: 'Why the first 200 words decide the whole page',
     summary:
-      'Search engines skim. AI engines quote. Both decide from the top of the page. How we structure an opening so machines lift it verbatim — and why most content buries its own lede.',
+      'Google skims. The AI assistants lift whole sentences. Both make their mind up at the top. Most business writing buries the answer four paragraphs down, which is a shame, because that part never gets read.',
     status: 'in the drop queue',
   },
   {
     code: 'FN-003',
-    title: 'Your traffic report is lying about AI referrals',
+    title: 'Your analytics is lying to you about AI',
     summary:
-      'Buyers sent by ChatGPT and Perplexity mostly land as “direct” in standard analytics. What first-party attribution shows once you label them properly — and why it changes the budget.',
+      'Someone asks ChatGPT for a recommendation, gets your name, and turns up at your site. Standard analytics calls that “direct” and you never find out it happened. Here’s what it looks like once you label it properly.',
     status: 'in the drop queue',
   },
 ] as const;
@@ -51,9 +51,9 @@ export default function NotesPage() {
         Dispatches from the territory.
       </h1>
       <p className="rise rise-2 mt-6 max-w-2xl text-lg leading-relaxed text-bone-dim">
-        The pack runs campaigns daily; the notes are what the telemetry teaches us. Published
-        here with the same standard we sell — every claim sourced, dated and attributable.
-        Sparingly, when there is something worth saying.
+        We run this every day, so we find things out. When something turns out to be true and
+        useful, it gets written up here, held to the same standard we hold client work: sources,
+        dates, no guessing. Not on a schedule. Only when there’s something worth saying.
       </p>
 
       <div className="rise rise-3 mt-16 space-y-px bg-night-line">
@@ -75,11 +75,9 @@ export default function NotesPage() {
 
       <div className="rule mt-20 py-16 text-center">
         <p className="mx-auto max-w-xl text-bone-dim">
-          Cohort members do not wait for the notes — they get the telemetry itself.
+          Clients don’t wait for these. They can see the raw numbers whenever they want.
         </p>
-        <Link href="/apply" className="btn-primary mt-8">
-          Request consideration
-        </Link>
+        <Link href="/apply" className="btn-primary mt-8">Apply for a seat</Link>
       </div>
     </div>
   );

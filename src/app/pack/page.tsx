@@ -23,33 +23,33 @@ interface Operator {
 const ROSTER: readonly Operator[] = [
   {
     callsign: 'Alpha',
-    role: 'Principal · Strategy & the final word',
-    bio: 'A decade and change of taking search territory in markets that fight back. Reads algorithm updates the way rivals read press releases — afterward, and with sympathy. Signs off every application, every plan, every decline.',
-    marks: ['11+ years in search', 'Every cohort seat, personally approved'],
+    role: 'Strategy, and the last word',
+    bio: 'Eleven years of taking ground in markets that push back. Reads Google’s algorithm updates the way other people read the weather, then decides what we’re actually going to do about it. Every application, plan and rejection goes past this desk.',
+    marks: ['11 years in search', 'Reads every application'],
   },
   {
     callsign: 'The Archivist',
-    role: 'Content engineering',
-    bio: 'Runs the engine that writes what machines quote: sourced, dated, structured, and refreshed before it ages. Believes an unsourced statistic is a confession. Has opinions about heading hierarchies that end friendships.',
-    marks: ['Every fact sourced + dated', 'Schema that matches the visible text, always'],
+    role: 'Writing and publishing',
+    bio: 'Runs the machine that writes the work, and refuses to let a number through without a publisher and a date attached. Has strong views about heading structure. We have learned not to ask.',
+    marks: ['Sources and dates every claim', 'Nothing ships stale'],
   },
   {
     callsign: 'The Listener',
-    role: 'AI citation intelligence',
-    bio: 'Asks Gemini, Perplexity and Tavily the questions your customers ask — every day, on the record. Knows which engine cited whom, when, and what changed its mind. The reason “we’re winning in AI” is a chart here, not a mood.',
-    marks: ['Daily checks across three engines', 'Citation ledger with dates'],
+    role: 'Watching the AI assistants',
+    bio: 'Spends the day asking Gemini, Perplexity and Tavily what your customers ask them, and writing down the answers. Can tell you which assistant changed its mind about your industry last Tuesday, and roughly why.',
+    marks: ['Daily checks, three assistants', 'Every answer kept with its date'],
   },
   {
     callsign: 'The Cartographer',
-    role: 'Rank warfare & territory mapping',
-    bio: 'Maps every keyword the rivals hold and prices the cost of taking it. Mines the questions people actually ask before anyone else notices they exist. Draws the map; the engine marches on it.',
-    marks: ['Keyword-gap analysis with teeth', 'Question mining, weekly'],
+    role: 'Finding the gaps',
+    bio: 'Maps what your competitors rank for, prices what it would cost to take each piece, and is unsentimental about the ones not worth having. Finds the questions nobody in your field has answered yet, which is usually where the easy wins are hiding.',
+    marks: ['Competitor gap analysis', 'Question mining, weekly'],
   },
   {
     callsign: 'The Accountant',
-    role: 'Attribution & the pixel',
-    bio: 'Follows every click from the answer to the invoice. Labels the AI referrals other setups lose in “direct”. Does not accept faith as a data source and does not extend that courtesy to us either — the pack’s own numbers get audited hardest.',
-    marks: ['First-party attribution', 'AI-referral detection'],
+    role: 'Following the money',
+    bio: 'Traces a visit through to the phone call, and catches the AI referrals that every other setup quietly files under “direct”. Trusts nothing without a row to point at, including our own reporting, which gets the roughest treatment of all.',
+    marks: ['Visit to enquiry, end to end', 'Catches the AI referrals'],
   },
 ] as const;
 
@@ -61,9 +61,9 @@ export default function PackPage() {
         Small by design. Senior by policy.
       </h1>
       <p className="rise rise-2 mt-6 max-w-2xl text-lg leading-relaxed text-bone-dim">
-        Twelve clients means no account managers, no juniors learning on your budget, and no
-        handoffs. The people below are the people who do the work. Clients get names and faces
-        on day one; the public gets callsigns — redaction is house style.
+        Twelve clients means nobody gets handed to an account manager and nobody learns on your
+        budget. The five below are the ones doing the work. You get names, faces and direct
+        lines on day one. Everyone else gets callsigns, because we like it that way.
       </p>
 
       <div className="rise rise-3 mt-16 grid gap-px bg-night-line md:grid-cols-2">
@@ -87,21 +87,19 @@ export default function PackPage() {
         {/* The empty seat: recruiting and exclusivity in one cell. */}
         <article className="flex flex-col items-start justify-center border border-dashed border-night-line bg-night p-8">
           <p className="font-mono text-xs uppercase tracking-[0.25em] text-bone-faint">Unfilled</p>
-          <h2 className="mt-3 font-display text-2xl text-bone-dim">The pack does not post openings.</h2>
+          <h2 className="mt-3 font-display text-2xl text-bone-dim">We don’t advertise jobs.</h2>
           <p className="mt-4 text-sm leading-relaxed text-bone-faint">
-            If your work already outranks your reputation, it will find us.
+            If your work is already better than your CV, we’ll probably run into it.
           </p>
         </article>
       </div>
 
       <div className="rule mt-20 py-16 text-center">
         <p className="mx-auto max-w-xl text-bone-dim">
-          You will know exactly who is on your account before you sign anything. That is a
-          promise most agencies cannot afford to make.
+          You’ll know exactly who is working on your business before you sign anything. Most
+          agencies can’t afford to promise that.
         </p>
-        <Link href="/apply" className="btn-primary mt-8">
-          Request consideration
-        </Link>
+        <Link href="/apply" className="btn-primary mt-8">Apply for a seat</Link>
       </div>
     </div>
   );
