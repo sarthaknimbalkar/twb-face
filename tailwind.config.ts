@@ -6,19 +6,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // RGB triplets live in globals.css (:root / html.wolf) so the Wolfback host
+        // can invert the palette without touching a single component class.
         night: {
-          DEFAULT: '#0a0a0b',
-          soft: '#111113',
-          line: '#232326',
+          DEFAULT: 'rgb(var(--night) / <alpha-value>)',
+          soft: 'rgb(var(--night-soft) / <alpha-value>)',
+          line: 'rgb(var(--night-line) / <alpha-value>)',
         },
         bone: {
-          DEFAULT: '#e8e4dc',
-          dim: '#a09a8e',
-          faint: '#847d70',
+          DEFAULT: 'rgb(var(--bone) / <alpha-value>)',
+          dim: 'rgb(var(--bone-dim) / <alpha-value>)',
+          faint: 'rgb(var(--bone-faint) / <alpha-value>)',
         },
         blood: {
-          DEFAULT: '#c62f2f',
-          bright: '#e04545',
+          DEFAULT: 'rgb(var(--blood) / <alpha-value>)',
+          bright: 'rgb(var(--blood-bright) / <alpha-value>)',
         },
       },
       fontFamily: {

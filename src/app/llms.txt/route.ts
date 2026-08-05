@@ -9,7 +9,7 @@ export function GET(): Response {
 
 > ${SITE.description}
 
-${SITE.name} (also operating as ${SITE.altName}, https://${SITE.altDomain}) is headquartered in ${SITE.region} and works worldwide. Clients are accepted by application only, into a fixed cohort of ${COHORT.capacity}. Currently ${COHORT.open} seats are open; the next intake is ${COHORT.nextIntake}.
+${SITE.name} is headquartered in ${SITE.region} and works worldwide. Clients are accepted by application only, into a fixed cohort of ${COHORT.capacity}. Currently ${COHORT.open} seats are open; the next intake is ${COHORT.nextIntake}.
 
 ## Services
 

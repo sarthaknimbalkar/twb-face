@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 @layer base {
+  /* Palette as RGB triplets so Tailwind alpha modifiers keep working. */
+  :root {
+    --night: 10 10 11;
+    --night-soft: 17 17 19;
+    --night-line: 35 35 38;
+    --bone: 232 228 220;
+    --bone-dim: 160 154 142;
+    --bone-faint: 132 125 112;
+    --blood: 198 47 47;
+    --blood-bright: 224 69 69;
+  }
   html {
     scroll-behavior: smooth;
   }
@@ -56,6 +67,56 @@
       transform: translateY(0);
     }
   }
+  @keyframes gate-type {
+    from {
+      width: 0;
+    }
+    to {
+      width: var(--type-w);
+    }
+  }
+  @keyframes gate-caret {
+    0%,
+    100% {
+      border-color: rgb(var(--blood-bright));
+    }
+    50% {
+      border-color: transparent;
+    }
+  }
+  @keyframes gate-out {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  @keyframes grain-jitter {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-2%, 1.5%);
+    }
+    50% {
+      transform: translate(1.5%, -2%);
+    }
+    75% {
+      transform: translate(-1%, -1%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  @keyframes stamp-in {
+    from {
+      opacity: 0;
+      transform: rotate(-12deg) scale(2.4);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(-12deg) scale(1);
+    }
+  }
 }
 
 @layer components {
@@ -90,12 +151,76 @@
   .drift {
     animation: drift 7s ease-in-out infinite;
   }
+  /* ——— The Gate: shown only when the inline head script stamps html[data-gate]. ——— */
+  .gate {
+    display: none;
+  }
+  html[data-gate] .gate {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: rgb(var(--night));
+    animation: gate-out 0.4s ease 2.3s forwards;
+  }
+  .gate-line {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    border-right: 2px solid rgb(var(--blood-bright));
+    animation:
+      gate-type 0.9s steps(24) 0.2s forwards,
+      gate-caret 0.7s step-end 5;
+  }
+  .gate-line-2 {
+    --type-w: 10ch;
+    animation:
+      gate-type 0.5s steps(10) 1.5s forwards,
+      gate-caret 0.7s step-end 1.5s 2;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html[data-gate] .gate {
+      display: none;
+    }
+  }
+
+  /* ——— Grain: one SVG turbulence tile, jittered. Texture, not noise. ——— */
+  .grain {
+    position: fixed;
+    inset: -60%;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation: grain-jitter 0.9s steps(4) infinite;
+  }
+
+  /* ——— Scroll reveals: native scroll-driven animation where supported. ——— */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 35%;
+    }
+  }
+
+  .stamp {
+    animation: stamp-in 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.4) both;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .rise,
     .seat,
     .seat-open,
     .pulse-soft,
-    .drift {
+    .drift,
+    .grain,
+    .reveal,
+    .stamp {
       animation: none;
     }
   }

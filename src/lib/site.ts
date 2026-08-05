@@ -5,9 +5,7 @@
  */
 export const SITE = {
   name: 'The Woofback',
-  altName: 'The Wolfback',
   domain: 'thewoofback.com',
-  altDomain: 'thewolfback.com',
   url: 'https://thewoofback.com',
   email: 'consideration@thewoofback.com',
   region: 'Michigan, United States',
@@ -43,6 +41,10 @@ export const FAQS: readonly Faq[] = [
   {
     q: 'Why does The Woofback only take twelve clients?',
     a: 'Because we do not sell reports — we take territory. Every client gets a dedicated content engine, its own editorial voice, live citation tracking across AI engines, and a team that knows the account cold. That does not scale to hundreds of logos, and we refuse to pretend it does. When the cohort is full, it is full.',
+  },
+  {
+    q: 'Is this only for big brands?',
+    a: 'No — mostly the opposite. The cohort is largely local and regional businesses that are excellent at what they do and want to be the first name people (and their phones) find. You bring the reputation; making the internet reflect it is our job, jargon included. Size has never been the entry requirement. Being worth putting at the top is.',
   },
   {
     q: 'Do you work with businesses outside Michigan?',

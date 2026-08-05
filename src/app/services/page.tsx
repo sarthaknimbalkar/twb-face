@@ -81,7 +81,7 @@ export default function ServicesPage() {
 
       <div className="mt-20 space-y-20">
         {WEAPONS.map((w) => (
-          <section key={w.no} className="rule grid gap-8 pt-12 md:grid-cols-[1fr_2fr]">
+          <section key={w.no} className="rule reveal grid gap-8 pt-12 md:grid-cols-[1fr_2fr]">
             <div>
               <p className="font-mono text-xs text-bone-faint">{w.no}</p>
               <h2 className="mt-3 font-display text-3xl">{w.name}</h2>

@@ -11,12 +11,18 @@ export function Footer() {
               {SITE.name}
               <span className="text-bone-faint"> / </span>
               <Link href="/wolves" className="text-bone-faint transition-colors hover:text-blood-bright">
-                {SITE.altName}
+                the wolves
               </Link>
             </p>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-bone-dim">
               A private SEO · GEO · AEO practice. Headquartered in {SITE.region}. Hunting
               everywhere.
+            </p>
+            <p className="mt-3 text-sm text-bone-faint">
+              We say no more often than yes — kindly.{' '}
+              <Link href="/decline" className="wolf-link underline decoration-night-line underline-offset-4">
+                See what that looks like.
+              </Link>
             </p>
           </div>
           <div className="font-mono text-xs uppercase tracking-widest text-bone-faint">

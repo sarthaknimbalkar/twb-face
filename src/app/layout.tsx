@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google';
 import { Footer } from '@/components/Footer';
+import { Gate } from '@/components/Gate';
 import { Header } from '@/components/Header';
 import { JsonLd } from '@/components/JsonLd';
 import { SourceWhisper } from '@/components/SourceWhisper';
@@ -32,9 +33,24 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${display.variable} ${body.variable} ${mono.variable}`}
+    >
+      <head>
+        {/* Stamp the gate before first paint so returning visitors never see a flash. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(!localStorage.getItem('twb_gate'))document.documentElement.setAttribute('data-gate','')}catch(e){}",
+          }}
+        />
+      </head>
       <body>
-        <SourceWhisper text="You read source code before hiring an agency. Good. So do we, before answering an application. thewolfback.com" />
+        <Gate />
+        <div className="grain" aria-hidden />
+        <SourceWhisper text="You read source code before hiring an agency. Good. So do we, before answering an application. The polite half of this site wrote the HTML; the other half wrote the comments." />
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={professionalServiceJsonLd()} />
         <a

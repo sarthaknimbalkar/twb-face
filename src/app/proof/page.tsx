@@ -69,7 +69,7 @@ export default function ProofPage() {
 
       <div className="mt-20 space-y-16">
         {LEDGER.map((e) => (
-          <article key={e.client} className="rule grid gap-6 pt-12 md:grid-cols-[1fr_2fr]">
+          <article key={e.client} className="rule reveal grid gap-6 pt-12 md:grid-cols-[1fr_2fr]">
             <div className="font-mono text-xs uppercase tracking-widest text-bone-faint">
               <p className="text-blood-bright">{e.client}</p>
               <p className="mt-2">{e.vertical}</p>

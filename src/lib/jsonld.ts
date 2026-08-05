@@ -11,11 +11,9 @@ export function organizationJsonLd(): Record<string, unknown> {
     '@type': 'Organization',
     '@id': `${SITE.url}/#organization`,
     name: SITE.name,
-    alternateName: SITE.altName,
     url: SITE.url,
     email: SITE.email,
     description: SITE.description,
-    sameAs: [`https://${SITE.altDomain}`],
     address: {
       '@type': 'PostalAddress',
       addressRegion: 'Michigan',

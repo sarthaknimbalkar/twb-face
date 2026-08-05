@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header className="rule sticky top-0 z-50 border-b border-night-line bg-night/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-3 px-6 py-4 sm:flex-row sm:items-center sm:py-5">
-        {/* The wordmark itself carries the split: hover turns Woof into Wolf. */}
+        {/* The split personality's front door: hover, and Woof bares its teeth. */}
         <Link href="/" className="group font-display text-xl tracking-tight">
           <span className="text-bone">The&nbsp;</span>
           <span className="relative inline-block">

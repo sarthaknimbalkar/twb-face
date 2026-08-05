@@ -59,7 +59,7 @@ const COMPARISON: readonly {
   },
   {
     dim: 'Client load',
-    diy: 'Just you (that’s the problem)',
+    diy: 'You, at 9 p.m., after a full day of real work',
     typical: 'As many logos as sales can close',
     twb: 'Twelve. Ever. When it’s full, it’s full',
   },
@@ -71,7 +71,15 @@ const COMPARISON: readonly {
   },
 ];
 
+const HERO = {
+  kicker: 'SEO · GEO · AEO — by application only',
+  line1: <>You came looking for The&nbsp;Woofback.</>,
+  line2: 'You found the wolves.',
+  sub: 'You’re at the top of the page right now. That is exactly where we put our clients: first on Google, first in the AI answers, first in the only fight that matters.',
+} as const;
+
 export default function HomePage() {
+  const hero = HERO;
   return (
     <>
       <JsonLd data={faqPageJsonLd()} />
@@ -80,16 +88,14 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <div className="mx-auto grid max-w-6xl gap-16 px-6 pb-24 pt-28 md:pt-36 lg:grid-cols-[3fr_2fr] lg:items-center">
           <div>
-            <p className="kicker rise">SEO · GEO · AEO — by application only</p>
+            <p className="kicker rise">{hero.kicker}</p>
             <h1 className="rise rise-1 mt-6 max-w-4xl font-display text-5xl leading-[1.05] tracking-tight md:text-7xl">
-              You came looking for The&nbsp;Woofback.
+              {hero.line1}
               <br />
-              <span className="text-blood-bright">You found the wolves.</span>
+              <span className="text-blood-bright">{hero.line2}</span>
             </h1>
             <p className="rise rise-2 mt-8 max-w-2xl text-lg leading-relaxed text-bone-dim">
-              Gods or kings — call us what you like. Either way, you’re at the top of the page,
-              and that is precisely where we put our clients: first on Google, first in the AI
-              answers, first in the only fight that matters.
+              {hero.sub}
             </p>
             <div className="rise rise-3 mt-10 flex flex-wrap items-center gap-4">
               <Link href="/apply" className="btn-primary">
@@ -110,7 +116,7 @@ export default function HomePage() {
       </section>
 
       {/* ——— Answer block: the query answered in the first screenful, AEO-first ——— */}
-      <section className="rule">
+      <section className="rule reveal">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <p className="kicker">What this is</p>
           <div className="mt-6 max-w-prose space-y-5 text-lg leading-relaxed text-bone">
@@ -122,16 +128,21 @@ export default function HomePage() {
               Gemini, and measured all the way down to the conversion.
             </p>
             <p className="text-bone-dim">
+              Most of our clients are simply the best at what they do — and too busy doing it
+              to fight Google about it. That is the whole point of us.
+            </p>
+            <p className="text-bone-dim">
               We are not an agency in the usual sense. There is no pricing page, no sales team,
               and no onboarding funnel. There is an application, a review, and — for the few —
-              a seat.
+              a seat. Twelve seats isn’t a velvet rope for show: it is how you get the actual
+              pack working on your business instead of an account manager reading you a report.
             </p>
           </div>
         </div>
       </section>
 
       {/* ——— The arsenal, teased ——— */}
-      <section className="rule">
+      <section className="rule reveal">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <p className="kicker">The arsenal</p>
           <h2 className="mt-4 font-display text-3xl md:text-4xl">
@@ -155,7 +166,7 @@ export default function HomePage() {
       </section>
 
       {/* ——— Proof strip ——— */}
-      <section className="rule">
+      <section className="rule reveal">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <p className="kicker">Proof, redacted</p>
           <h2 className="mt-4 font-display text-3xl md:text-4xl">
@@ -179,7 +190,7 @@ export default function HomePage() {
       </section>
 
       {/* ——— Comparison table: the “competitors” section, framed as a category ——— */}
-      <section className="rule">
+      <section className="rule reveal">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <p className="kicker">Know your options</p>
           <h2 className="mt-4 font-display text-3xl md:text-4xl">
@@ -211,7 +222,7 @@ export default function HomePage() {
       </section>
 
       {/* ——— FAQ: visible text mirrors FAQPage JSON-LD exactly ——— */}
-      <section className="rule">
+      <section className="rule reveal">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <p className="kicker">Questions, answered first</p>
           <h2 className="mt-4 font-display text-3xl md:text-4xl">Frequently asked questions</h2>
@@ -227,7 +238,7 @@ export default function HomePage() {
       </section>
 
       {/* ——— Final CTA ——— */}
-      <section className="rule">
+      <section className="rule reveal">
         <div className="mx-auto max-w-6xl px-6 py-24 text-center">
           <h2 className="mx-auto max-w-3xl font-display text-4xl leading-tight md:text-5xl">
             We don’t take clients.

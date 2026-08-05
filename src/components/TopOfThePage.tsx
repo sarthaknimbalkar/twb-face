@@ -2,14 +2,19 @@
  * The signature mark: a stylized results page where position one belongs to the client.
  * Pure CSS/JSX, no images — the point of the whole practice, drawn instead of said.
  */
+import { WolfEyes } from '@/components/WolfEyes';
+
 const RIVALS = ['second place', 'third place', 'the rest', 'also ran'] as const;
 
 export function TopOfThePage() {
   return (
     <div aria-hidden className="drift select-none border border-night-line bg-night-soft/60 p-6 shadow-[0_0_80px_-20px_rgba(198,47,47,0.25)]">
-      <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone-faint">
-        the only real estate
-      </p>
+      <div className="flex items-center justify-between">
+        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-bone-faint">
+          the only real estate
+        </p>
+        <WolfEyes />
+      </div>
       <div className="mt-5 space-y-4">
         <div className="border border-blood/60 bg-blood/10 p-4">
           <div className="flex items-baseline justify-between gap-6">
