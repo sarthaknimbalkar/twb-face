@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#0a0a0b"/>
+  <!-- a paw print at rest; the middle claw is the tell -->
+  <circle cx="10" cy="12" r="3" fill="#e8e4dc"/>
+  <circle cx="22" cy="12" r="3" fill="#e8e4dc"/>
+  <circle cx="16" cy="9" r="3" fill="#c62f2f"/>
+  <ellipse cx="16" cy="21" rx="7" ry="5.5" fill="#e8e4dc"/>
+</svg>

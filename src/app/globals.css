@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-night text-bone font-body antialiased;
+  }
+  ::selection {
+    @apply bg-blood text-bone;
+  }
+}
+
+@layer base {
+  /* Motion: entrances only, 300–700ms, and none at all for those who asked for none. */
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes seat-fill {
+    from {
+      opacity: 0;
+      transform: scaleY(0);
+    }
+    to {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+  @keyframes pulse-soft {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.55;
+    }
+  }
+  @keyframes drift {
+    from {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer components {
+  .rise {
+    animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .rise-1 {
+    animation-delay: 0.08s;
+  }
+  .rise-2 {
+    animation-delay: 0.18s;
+  }
+  .rise-3 {
+    animation-delay: 0.3s;
+  }
+  .rise-4 {
+    animation-delay: 0.44s;
+  }
+  .seat {
+    transform-origin: bottom;
+    animation: seat-fill 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .seat-open {
+    transform-origin: bottom;
+    animation:
+      seat-fill 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) both,
+      pulse-soft 2.8s ease-in-out 1.2s infinite;
+  }
+  .pulse-soft {
+    animation: pulse-soft 2.8s ease-in-out infinite;
+  }
+  .drift {
+    animation: drift 7s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .rise,
+    .seat,
+    .seat-open,
+    .pulse-soft,
+    .drift {
+      animation: none;
+    }
+  }
+
+  /* The split personality lives in the details: polite at rest, wolf on hover. */
+  .wolf-link {
+    @apply relative text-bone-dim transition-colors duration-200 hover:text-blood-bright;
+  }
+  .kicker {
+    @apply font-mono text-xs uppercase tracking-[0.25em] text-blood;
+  }
+  .rule {
+    @apply border-t border-night-line;
+  }
+  .btn-primary {
+    @apply inline-block border border-blood bg-blood px-8 py-4 font-mono text-sm uppercase tracking-widest text-bone transition-colors duration-200 hover:bg-transparent hover:text-blood-bright;
+  }
+  .btn-ghost {
+    @apply inline-block border border-night-line px-8 py-4 font-mono text-sm uppercase tracking-widest text-bone-dim transition-colors duration-200 hover:border-blood hover:text-blood-bright;
+  }
+}

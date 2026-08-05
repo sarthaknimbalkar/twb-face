@@ -1,0 +1,10 @@
+packages:
+  - '.'
+
+allowBuilds:
+  unrs-resolver: false
+
+# unrs-resolver's postinstall only builds an optional native speedup for the eslint
+# import resolver; skipping it is safe and keeps installs non-interactive.
+ignoredBuiltDependencies:
+  - unrs-resolver
