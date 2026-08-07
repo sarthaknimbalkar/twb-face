@@ -3,9 +3,7 @@ import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google';
 import { Footer } from '@/components/Footer';
 import { Gate } from '@/components/Gate';
 import { Header } from '@/components/Header';
-import { JsonLd } from '@/components/JsonLd';
 import { SourceWhisper } from '@/components/SourceWhisper';
-import { organizationJsonLd, professionalServiceJsonLd } from '@/lib/jsonld';
 import { SITE } from '@/lib/site';
 import './globals.css';
 
@@ -16,7 +14,7 @@ const mono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} — SEO, GEO & AEO for the few`,
+    default: `${SITE.name} — an entire growth department, one system`,
     template: `%s — ${SITE.name}`,
   },
   description: SITE.description,
@@ -25,7 +23,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: SITE.name,
     url: SITE.url,
-    title: `${SITE.name} — SEO, GEO & AEO for the few`,
+    title: `${SITE.name} — an entire growth department, one system`,
     description: SITE.description,
   },
   robots: { index: true, follow: true },
@@ -51,8 +49,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Gate />
         <div className="grain" aria-hidden />
         <SourceWhisper text="You read source code before hiring an agency. Good. So do we, before answering an application. The polite half of this site wrote the HTML; the other half wrote the comments." />
-        <JsonLd data={organizationJsonLd()} />
-        <JsonLd data={professionalServiceJsonLd()} />
         <a
           href="#content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:bg-blood focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:uppercase focus:tracking-widest focus:text-bone"
