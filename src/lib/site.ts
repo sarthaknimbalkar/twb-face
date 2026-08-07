@@ -15,7 +15,7 @@ export const SITE = {
   region: 'Michigan, United States',
   tagline: 'An entire growth department, in one system.',
   description:
-    'A multi-brand growth system that researches, writes, publishes and maintains search and answer-engine content, tracks rank and AI assistant citations, and converts readers into leads.',
+    'The Woof Back gets businesses found first — on Google and inside AI assistants like ChatGPT — and turns that attention into enquiries. It researches, writes and publishes the content, tracks rankings and AI recommendations daily, and traces every lead back to the page that earned it.',
 } as const;
 
 /** Founding-cohort seats. A capped cohort is a decision we keep, not a statistic we assert. */
@@ -50,8 +50,8 @@ export const STAGES: readonly Stage[] = [
     id: 'research',
     num: '01',
     name: 'Research',
-    claim: 'Gather what is actually true.',
-    body: 'Live web research on the question your buyer is really asking. Every claim is bound to a named publisher and a date before it is allowed into the draft. No source, no sentence.',
+    claim: 'Find what your customers actually ask.',
+    body: 'We dig up the real questions people type before they spend money in your market. And every fact we ever publish carries where it came from and when — which is exactly why people and machines end up trusting it.',
     img: 'stage-research',
     alt: 'Hundreds of fine red threads converging from every direction onto one white-hot point.',
   },
@@ -59,8 +59,8 @@ export const STAGES: readonly Stage[] = [
     id: 'write',
     num: '02',
     name: 'Write',
-    claim: 'Build the artifact, not the word count.',
-    body: 'The answer in the first two hundred words. Strict H1 to H2 to H3. A comparison table and a data table. A real FAQ. The shape an answer engine can parse without guessing.',
+    claim: 'Answer it better than anyone else has.',
+    body: 'Each piece answers the question straight away, in your voice, with the evidence attached. Structured the way Google and the AI assistants like to read — which is a technical way of saying it gets picked.',
     img: 'stage-write',
     alt: 'A block of black stone being cut into clean stepped tiers by a beam of red light.',
   },
@@ -68,8 +68,8 @@ export const STAGES: readonly Stage[] = [
     id: 'publish',
     num: '03',
     name: 'Publish',
-    claim: 'Ship it as HTML a crawler can read.',
-    body: 'Server-rendered pages on your own domain, with JSON-LD that matches the visible text rather than contradicting it. Per-host sitemap, robots and llms.txt generated and kept current.',
+    claim: 'It goes live on your site. Done.',
+    body: 'Not a draft sitting in your inbox waiting for you — finished pages, published on your own website, built so every search engine and AI assistant can read every word. You own all of it.',
     img: 'stage-publish',
     alt: 'A dark transmitter tower sending concentric rings of red light out across a plain.',
   },
@@ -77,8 +77,8 @@ export const STAGES: readonly Stage[] = [
     id: 'rank',
     num: '04',
     name: 'Rank',
-    claim: 'Hold the position once you take it.',
-    body: 'Rank tracking, technical crawls, page speed, broken links and backlinks, watched continuously. Anything drifting past roughly ninety days is queued for refresh instead of quietly rotting.',
+    claim: 'Climb the rankings, then hold the spot.',
+    body: 'We watch your positions, your site health and anything going stale, and fix it before it costs you a customer. A ranking is rented space — we keep paying the rent so you keep the address.',
     img: 'stage-rank',
     alt: 'Four plinths of descending height, the tallest blazing red while the rest stay dark.',
   },
@@ -86,8 +86,8 @@ export const STAGES: readonly Stage[] = [
     id: 'cite',
     num: '05',
     name: 'Cite',
-    claim: 'Watch the answer layer, not just the SERP.',
-    body: 'Track whether assistants are citing you for the questions that matter — and, when they are not, exactly who they are citing instead. You cannot take a slot you cannot see.',
+    claim: 'Get recommended by the machines.',
+    body: 'Every day we ask the AI assistants the questions your customers ask, and write down who got recommended. When it is not you, we know exactly who it was — and that becomes next week’s work.',
     img: 'stage-cite',
     alt: 'Three separate beams of light converging to spotlight one small glowing object.',
   },
@@ -95,8 +95,8 @@ export const STAGES: readonly Stage[] = [
     id: 'convert',
     num: '06',
     name: 'Convert',
-    claim: 'Turn the reader into pipeline.',
-    body: 'Lead capture, scoring and CRM routing. A/B tests that pick their own winner. Attribution that traces the closed deal back to the specific article that earned it.',
+    claim: 'Turn readers into paying customers.',
+    body: 'Calls, forms and enquiries land in your inbox with a note saying which page earned them. So when you ask “what is this actually making me?”, the answer is a number, not a shrug.',
     img: 'stage-convert',
     alt: 'A wide funnel of black walls narrowing to one intensely bright point of red light.',
   },
@@ -110,7 +110,7 @@ export const STAGES: readonly Stage[] = [
 export const PRICING = [
   {
     h: 'One fee per brand, per month',
-    b: 'It covers the whole pipeline — research, writing, publishing, rank and citation tracking, and the lead capture. Not six line items that add up to a surprise.',
+    b: 'It covers everything — the research, the writing, the publishing, the daily checks on rankings and AI recommendations, and the lead handling. Not six line items that add up to a surprise.',
   },
   {
     h: 'Nothing is metered',
@@ -146,12 +146,12 @@ export const AFTER_YOU_APPLY = [
   {
     when: 'From week two',
     h: 'It publishes, and the watching starts',
-    b: 'Content ships on a schedule, and rank plus citation tracking begins the same week — so you can see the starting line rather than being told about it later.',
+    b: 'Content ships on a schedule, and the tracking of rankings and AI recommendations begins the same week — so you can see the starting line rather than being told about it later.',
   },
   {
     when: 'Honestly, months not weeks',
     h: 'When it starts working',
-    b: 'Search and answer engines move slowly. Expect early ranking movement inside a quarter and citations to follow. Anyone promising faster is guessing.',
+    b: 'Google and the assistants move slowly. Expect early ranking movement inside a quarter and AI recommendations to follow. Anyone promising faster is guessing.',
   },
 ] as const;
 
@@ -183,7 +183,7 @@ export const COMPARISON = [
     diy: 'Nothing',
     agency: 'A screenshot of a traffic graph',
     tool: 'Not the tool’s problem',
-    twb: 'Rank, citations, speed and freshness watched continuously',
+    twb: 'Rankings, AI recommendations, speed and freshness watched continuously',
   },
   {
     dim: 'Turning readers into money',
@@ -203,7 +203,7 @@ export const LEDGER = [
   {
     stat: '139 answers',
     label: 'logged in six days',
-    b: 'For one account in its first week: every question put to Gemini, Perplexity and Tavily, with what came back and when. On day one the citation count was zero, and we said so on day one.',
+    b: 'For one account in its first week: every question put to Gemini, Perplexity and Tavily, with what came back and when. On day one they were recommended exactly zero times, and we said so on day one.',
   },
   {
     stat: '19 domains',
@@ -225,12 +225,12 @@ export interface Faq {
 /** Rendered visibly AND emitted as FAQPage JSON-LD. The two must never drift apart. */
 export const FAQS: readonly Faq[] = [
   {
-    q: 'What is The Woof Back?',
-    a: 'A growth system that researches, writes, publishes and maintains search- and answer-engine content on your own domain, tracks how it ranks and whether AI assistants cite it, and converts the resulting readers into leads. It replaces the coordination work of a content team, an SEO retainer and a reporting stack with one pipeline.',
+    q: 'I just want more customers. What does this actually do for me?',
+    a: 'It makes you the business people find when they are ready to spend. Your customers ask Google, and increasingly ask AI assistants like ChatGPT, who to call — and someone gets named. We publish the material that gets you named, keep it winning, and hand you the enquiries that come off it, each with a note on which page earned it. The industry calls the ingredients SEO, AEO and GEO; you can happily never say those words again. That is what you would be paying us for.',
   },
   {
     q: 'How is this different from an AI writing tool?',
-    a: 'A writing tool hands you text. This publishes and maintains a property. It refuses to print a statistic without a publisher and a date, renders server-side HTML with schema that matches the visible page, tracks rank and assistant citations after publication, and routes the leads. The writing is one of six stages.',
+    a: 'A writing tool hands you text and wishes you luck. This runs the whole job: it publishes to your website, refuses to print a number it cannot back up, checks every day how you rank and whether the AI assistants recommend you, and delivers the enquiries that result. The writing is one stage out of six.',
   },
   {
     q: 'Can agencies run it for their clients?',
@@ -254,6 +254,6 @@ export const FAQS: readonly Faq[] = [
   },
   {
     q: 'How long before anything happens?',
-    a: 'Months, not weeks, and anyone telling you otherwise is guessing. Content starts publishing in the second week and tracking begins immediately, so you can watch from the starting line. Ranking movement typically shows inside a quarter and assistant citations follow that. The compounding is the point: the pages you publish now are what gets quoted next year.',
+    a: 'Months, not weeks, and anyone telling you otherwise is guessing. Content starts publishing in the second week and tracking begins immediately, so you can watch from the starting line. Ranking movement typically shows inside a quarter and AI recommendations follow that. The compounding is the point: the pages you publish now are what gets quoted next year.',
   },
 ] as const;

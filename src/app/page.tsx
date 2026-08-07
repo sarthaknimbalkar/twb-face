@@ -36,13 +36,22 @@ const THESIS_TILES = [
 ] as const;
 
 const PROOFS = [
-  ['Publisher and date, every figure', 'A statistic without attribution never reaches the page.'],
   [
-    'Schema that matches the page',
-    'JSON-LD describes what a reader actually sees, not a better version of it.',
+    'Every number has a source',
+    'A statistic without a named publisher and a date never reaches the page. Yours or ours.',
   ],
-  ['A real author per brand', 'E-E-A-T bylines that belong to someone, with the credentials to hold up.'],
-  ['Freshness is tracked', 'Content drifting past roughly ninety days is queued for refresh, not left to rot.'],
+  [
+    'Machines can verify all of it',
+    'The code behind each page says exactly what the page says. That checkability is why engines trust it enough to repeat it.',
+  ],
+  [
+    'A real person signs every piece',
+    'Your name, or a named expert with credentials — never “admin”. People buy from people; so do the machines, oddly.',
+  ],
+  [
+    'Nothing is left to rot',
+    'Anything approaching ninety days old gets refreshed before Google notices it aged. Stale pages quietly lose customers.',
+  ],
 ] as const;
 
 const PARTNER_POINTS = [
@@ -100,7 +109,7 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-6xl px-6 pb-24 pt-24 md:pb-32 md:pt-32">
           <p className="kicker rise flex items-center gap-3">
             <span className="pulse-soft inline-block h-1.5 w-1.5 rounded-full bg-blood-bright" />
-            The answer layer is being indexed right now
+            Your next customer just asked ChatGPT who to call
           </p>
           <h1 className="rise rise-1 mt-8 max-w-4xl font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
             An entire growth department.
@@ -108,16 +117,11 @@ export default function HomePage() {
             <em className="not-italic text-blood-bright">One system.</em>
           </h1>
           <p className="rise rise-2 mt-8 max-w-2xl text-lg leading-relaxed text-bone-dim">
-            {SITE.name} researches, writes, publishes, ranks and converts — and traces every figure
-            it prints to a named publisher and a date. Built for a web where the assistant answers
-            the question and cites three brands.
+            When someone asks Google or an AI assistant who to call, a handful of businesses get
+            named — and one of them gets the money. {SITE.name} does the publishing, the tracking
+            and the follow-through that makes it you, then shows you what each enquiry was worth.
           </p>
-          <p className="rise rise-2 mt-4 font-display text-xl text-bone">Be one of the three.</p>
-          <p className="rise rise-2 mt-5 max-w-xl border-l-2 border-blood/60 pl-4 text-sm leading-relaxed text-bone-faint">
-            In plain terms: when someone asks ChatGPT or Google who to call, a handful of
-            businesses get named. We do the publishing, tracking and follow-up that gets you
-            on that list — and show you the receipts.
-          </p>
+          <p className="rise rise-2 mt-4 font-display text-xl text-bone">Be one of the named.</p>
 
           <div className="rise rise-3 mt-10 flex flex-wrap items-center gap-4">
             <a href="#apply?path=operator" className="btn-primary">
@@ -146,9 +150,10 @@ export default function HomePage() {
               Ten blue links became one answer.
             </h2>
             <p className="text-lg leading-relaxed text-bone-dim">
-              When a buyer asks an assistant a question, they do not get a page of options to work
-              through. They get a paragraph and a short list of sources. That list is the entire
-              market. Everything outside it is not ranked lower — it is absent.
+              When your customer asks an AI assistant a question, they do not get a page of
+              options to work through. They get one answer and a short list of names. That list
+              is the entire market. Everyone else is not ranked lower — they are simply never
+              mentioned.
             </p>
           </div>
 
@@ -245,15 +250,15 @@ export default function HomePage() {
             <figure>
               <CitationBoard />
               <figcaption className="mt-4 max-w-prose text-sm leading-relaxed text-bone-dim">
-                Share of voice across the assistants. This account is new, so the honest reading
-                is &ldquo;not cited yet&rdquo; — and the board names the domains being cited
-                instead, with coverage and movement for each. That list is the work queue.
+                Who the machines recommend right now, in one client&rsquo;s market. The honest
+                reading for this new account is &ldquo;not you yet&rdquo; — and the board names
+                exactly who is being recommended instead. That list is the to-do list.
               </figcaption>
             </figure>
             <figure>
               <QuestionQueue />
               <figcaption className="mt-4 max-w-prose text-sm leading-relaxed text-bone-dim">
-                Real questions, mined from live search demand, competitor citations and the gaps
+                Real questions, pulled from live search demand, from what rivals get recommended for, and from the gaps
                 in what you have published — each scored, with the system&rsquo;s own reasoning
                 attached. You accept the good ones and they start being tracked on the next run.
               </figcaption>
