@@ -4,23 +4,26 @@ import { useEffect, useState } from 'react';
 import { CLAIMED, FOUNDING_COHORT_SEATS, SITE } from '@/lib/site';
 
 type Path = 'operator' | 'partner';
+type Status = 'idle' | 'sending' | 'sent' | 'failed';
 
 /**
- * Two audiences, one form: an operator runs a single brand, a partner resells the system to
- * their own clients. The path choice reveals the partner-only field rather than pushing anyone
- * to a second page — and it honours #apply?path=partner, so the partner CTAs elsewhere on the
- * page land here with the right box already ticked.
+ * The application posts to the platform's public lead endpoint (the same intake every client
+ * brand uses — the face dogfoods its own product). The request is a form-encoded no-cors POST,
+ * so the visitor stays on this page and gets the styled confirmation instead of being bounced
+ * to a bare thank-you on another domain.
  *
- * TEMPLATE NOTE: unwired by design. At integration this POSTs to the platform's intake
- * endpoint; until then it hands off to email so the page is never a dead end.
+ * Two audiences, one form: the path choice reveals the partner-only field, and the partner CTAs
+ * elsewhere on the page land here with the right box already ticked via "#apply?path=partner".
  */
+const LEAD_ENDPOINT = 'https://fortis-content-engine.vercel.app/lead/twb';
+
 export function ApplyForm() {
   const [path, setPath] = useState<Path>('operator');
+  const [status, setStatus] = useState<Status>('idle');
   const full = CLAIMED >= FOUNDING_COHORT_SEATS;
 
   useEffect(() => {
     const read = () => {
-      // Hash carries the choice because the page is static: "#apply?path=partner".
       if (window.location.hash.includes('path=partner')) setPath('partner');
       else if (window.location.hash.includes('path=operator')) setPath('operator');
     };
@@ -29,23 +32,73 @@ export function ApplyForm() {
     return () => window.removeEventListener('hashchange', read);
   }, []);
 
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const f = new FormData(form);
+
+    // The endpoint stores name/email/phone/message; everything else travels inside message.
+    const lines = [
+      `Applying as: ${path}`,
+      `Domain: ${String(f.get('domain') ?? '').trim()}`,
+      path === 'partner' && String(f.get('brands') ?? '').trim()
+        ? `Brands run: ${String(f.get('brands')).trim()}`
+        : null,
+      String(f.get('notes') ?? '').trim() ? `Cited for: ${String(f.get('notes')).trim()}` : null,
+      full ? 'NOTE: submitted after the cohort filled (waiting list).' : null,
+    ].filter(Boolean);
+
+    const body = new URLSearchParams({
+      name: String(f.get('name') ?? ''),
+      email: String(f.get('email') ?? ''),
+      message: lines.join('\n'),
+      // The endpoint's honeypot is the "company" field; forward ours under that name.
+      company: String(f.get('website') ?? ''),
+      source: 'thewoofback.com/apply',
+    });
+
+    setStatus('sending');
+    try {
+      // no-cors: the response is opaque, but a form-encoded POST like this either lands or
+      // throws on network failure — and network failure is the case we surface below.
+      await fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', body });
+      setStatus('sent');
+    } catch {
+      setStatus('failed');
+    }
+  }
+
+  if (status === 'sent') {
+    return (
+      <div className="border border-night-line bg-night-soft p-10 text-center" aria-live="polite">
+        <div className="stamp mx-auto inline-block border-4 border-blood px-8 py-4">
+          <p className="font-mono text-2xl uppercase tracking-[0.2em] text-blood-bright">
+            Received
+          </p>
+        </div>
+        <p className="mx-auto mt-8 max-w-sm leading-relaxed text-bone-dim">
+          Your application is in. All five of us read these on Fridays — you&rsquo;ll hear back
+          either way, and it won&rsquo;t take a fortnight.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <form
-      action={`mailto:${SITE.email}`}
-      method="post"
-      encType="text/plain"
+      onSubmit={onSubmit}
       className="border border-night-line bg-night-soft p-6 md:p-8"
       id="apply-form"
     >
       <fieldset className="border-0 p-0">
         <legend className="font-mono text-[11px] uppercase tracking-[0.25em] text-bone-faint">
-          I am applying as
+          This is for
         </legend>
         <div className="mt-4 grid gap-px bg-night-line sm:grid-cols-2">
           {(
             [
-              ['operator', 'An operator', 'I run one brand and want it to own its answers.'],
-              ['partner', 'A partner', 'I run brands for clients and want to resell this.'],
+              ['operator', 'My business', 'One brand — I want it to own the answers in its market.'],
+              ['partner', 'My clients’ brands', 'I run an agency and want to offer this under my own name.'],
             ] as const
           ).map(([value, title, blurb]) => (
             <label
@@ -78,7 +131,7 @@ export function ApplyForm() {
         <Field id="email" label="Work email" type="email" autoComplete="email" required />
         <Field
           id="domain"
-          label="Domain you want to win"
+          label="Your website"
           type="text"
           placeholder="example.com"
           required
@@ -92,7 +145,7 @@ export function ApplyForm() {
             htmlFor="notes"
             className="font-mono text-[11px] uppercase tracking-[0.25em] text-bone-dim"
           >
-            What are you trying to be cited for? <i className="text-bone-faint">optional</i>
+            What do you want to be known for? <i className="text-bone-faint">optional</i>
           </label>
           <textarea
             id="notes"
@@ -112,9 +165,29 @@ export function ApplyForm() {
         </label>
       </div>
 
-      <button type="submit" className="btn-primary mt-8 w-full justify-center">
-        {full ? 'Join the waiting list' : 'Apply for a founding seat'}
+      <button
+        type="submit"
+        disabled={status === 'sending'}
+        className="btn-primary mt-8 w-full justify-center disabled:cursor-wait disabled:opacity-60"
+      >
+        {status === 'sending'
+          ? 'Sending…'
+          : full
+            ? 'Join the waiting list'
+            : 'Apply for a founding seat'}
       </button>
+
+      {status === 'failed' && (
+        <p className="mt-4 border-l-2 border-blood pl-3 text-sm leading-relaxed text-bone" role="alert">
+          That didn&rsquo;t go through — probably a connection blip. Try again, or email us
+          directly at{' '}
+          <a href={`mailto:${SITE.email}`} className="underline decoration-blood underline-offset-4">
+            {SITE.email}
+          </a>
+          .
+        </p>
+      )}
+
       <p className="mt-5 text-sm leading-relaxed text-bone-faint">
         We read every application and reply either way. No newsletter, no drip sequence — if it is
         not a fit we will tell you quickly.

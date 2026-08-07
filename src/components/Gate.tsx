@@ -18,7 +18,7 @@ export function Gate() {
       } catch {
         /* private mode — they get assessed every time; fitting */
       }
-    }, 2800);
+    }, 1600);
     return () => window.clearTimeout(t);
   }, []);
 

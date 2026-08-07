@@ -43,7 +43,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-night-line bg-night/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-3 px-6 py-4 sm:flex-row sm:items-center sm:py-5">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4 sm:py-5">
         {/* The split personality's front door: hover, and Woof bares its teeth. */}
         <Link href="/" className="group font-display text-xl tracking-tight">
           <span className="text-bone">The&nbsp;</span>
@@ -57,7 +57,7 @@ export function Header() {
             </span>
           </span>
         </Link>
-        <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 sm:gap-8" aria-label="Primary">
+        <nav className="flex items-center gap-5 md:gap-8" aria-label="Primary">
           {NAV.map((item) => {
             const isActive = active === item.href.replace('#', '');
             return (
@@ -65,7 +65,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 aria-current={isActive ? 'true' : undefined}
-                className={`font-mono text-xs uppercase tracking-widest transition-colors ${
+                className={`hidden font-mono text-xs uppercase tracking-widest transition-colors md:inline ${
                   isActive ? 'text-blood-bright' : 'text-bone-dim hover:text-bone'
                 }`}
               >

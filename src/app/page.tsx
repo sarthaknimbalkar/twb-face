@@ -113,13 +113,18 @@ export default function HomePage() {
             the question and cites three brands.
           </p>
           <p className="rise rise-2 mt-4 font-display text-xl text-bone">Be one of the three.</p>
+          <p className="rise rise-2 mt-5 max-w-xl border-l-2 border-blood/60 pl-4 text-sm leading-relaxed text-bone-faint">
+            In plain terms: when someone asks ChatGPT or Google who to call, a handful of
+            businesses get named. We do the publishing, tracking and follow-up that gets you
+            on that list — and show you the receipts.
+          </p>
 
           <div className="rise rise-3 mt-10 flex flex-wrap items-center gap-4">
             <a href="#apply?path=operator" className="btn-primary">
-              Apply as an operator <span aria-hidden>→</span>
+              Apply for my business <span aria-hidden>→</span>
             </a>
             <a href="#apply?path=partner" className="btn-ghost">
-              Apply as a partner <span aria-hidden>→</span>
+              Apply for my clients <span aria-hidden>→</span>
             </a>
           </div>
 
@@ -254,6 +259,17 @@ export default function HomePage() {
               </figcaption>
             </figure>
           </div>
+
+          {/* The reader most likely to apply is the one who just saw the machinery. Do not make
+              them scroll seven more screens to act on it. */}
+          <div className="mt-16 flex flex-wrap items-center justify-between gap-6 border border-night-line bg-night-soft/60 px-6 py-6">
+            <p className="font-display text-xl">
+              Want this pointed at <span className="text-blood-bright">your</span> market?
+            </p>
+            <a href="#apply?path=operator" className="btn-primary">
+              Apply for my business <span aria-hidden>→</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -323,7 +339,10 @@ export default function HomePage() {
           <h2 className="mt-4 max-w-3xl font-display text-4xl leading-tight md:text-5xl">
             Four ways to do this. One of them keeps working after you close the laptop.
           </h2>
-          <div className="mt-12 overflow-x-auto">
+          <p className="mt-12 font-mono text-[10px] uppercase tracking-widest text-bone-faint md:hidden">
+            Swipe sideways to compare →
+          </p>
+          <div className="scroll-fade mt-3 overflow-x-auto md:mt-12">
             <table className="w-full min-w-[860px] border-collapse text-left text-sm">
               <thead>
                 <tr className="border-b border-night-line font-mono text-[11px] uppercase tracking-widest text-bone-faint">
@@ -384,7 +403,7 @@ export default function HomePage() {
             ))}
           </ul>
           <a href="#apply?path=partner" className="btn-primary mt-12">
-            Apply as a partner <span aria-hidden>→</span>
+            Apply for my clients <span aria-hidden>→</span>
           </a>
         </div>
       </section>
@@ -568,10 +587,10 @@ export default function HomePage() {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a href="#apply?path=operator" className="btn-primary">
-              Apply as an operator <span aria-hidden>→</span>
+              Apply for my business <span aria-hidden>→</span>
             </a>
             <a href="#apply?path=partner" className="btn-ghost">
-              Apply as a partner <span aria-hidden>→</span>
+              Apply for my clients <span aria-hidden>→</span>
             </a>
           </div>
         </div>

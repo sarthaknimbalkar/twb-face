@@ -165,7 +165,8 @@
     justify-content: center;
     gap: 1rem;
     background: rgb(var(--night));
-    animation: gate-out 0.4s ease 2.3s forwards;
+    /* Short enough that a cold visitor never wonders if the page is broken. */
+    animation: gate-out 0.35s ease 1.15s forwards;
   }
   .gate-line {
     overflow: hidden;
@@ -173,14 +174,14 @@
     width: 0;
     border-right: 2px solid rgb(var(--blood-bright));
     animation:
-      gate-type 0.9s steps(24) 0.2s forwards,
-      gate-caret 0.7s step-end 5;
+      gate-type 0.55s steps(24) 0.1s forwards,
+      gate-caret 0.55s step-end 2;
   }
   .gate-line-2 {
     --type-w: 10ch;
     animation:
-      gate-type 0.5s steps(10) 1.5s forwards,
-      gate-caret 0.7s step-end 1.5s 2;
+      gate-type 0.3s steps(10) 0.75s forwards,
+      gate-caret 0.5s step-end 0.75s 2;
   }
   @media (prefers-reduced-motion: reduce) {
     html[data-gate] .gate {
@@ -190,6 +191,7 @@
 
   /* ——— Grain: one SVG turbulence tile, jittered. Texture, not noise. ——— */
   .grain {
+    display: none;
     position: fixed;
     inset: -60%;
     z-index: 90;
@@ -197,6 +199,23 @@
     opacity: 0.05;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
     animation: grain-jitter 0.9s steps(4) infinite;
+  }
+  @media (min-width: 768px) {
+    .grain {
+      display: block;
+    }
+  }
+
+  /* Edge fade signalling "there is more table to the right" on narrow screens. */
+  .scroll-fade {
+    -webkit-mask-image: linear-gradient(to right, black 92%, transparent);
+    mask-image: linear-gradient(to right, black 92%, transparent);
+  }
+  @media (min-width: 768px) {
+    .scroll-fade {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
   }
 
   /* ——— Scroll reveals: native scroll-driven animation where supported. ——— */

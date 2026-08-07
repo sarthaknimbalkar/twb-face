@@ -36,7 +36,7 @@ export function Counter({ variant = 'hero' }: { variant?: 'hero' | 'block' }) {
       <p className="mt-3 font-mono text-[11px] uppercase leading-relaxed tracking-widest text-bone-faint">
         {full
           ? 'The founding cohort is full. New applications join the waiting list.'
-          : `${remaining} seat${remaining === 1 ? '' : 's'} remaining · applications reviewed weekly · this figure is read live from our database`}
+          : `${remaining} seat${remaining === 1 ? '' : 's'} remaining · applications reviewed weekly · figure updated with each deploy`}
       </p>
     </div>
   );
