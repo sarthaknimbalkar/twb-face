@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { ApplyForm } from '@/components/ApplyForm';
+import { CitationBoard } from '@/components/CitationBoard';
 import { Counter } from '@/components/Counter';
 import { JsonLd } from '@/components/JsonLd';
-import { ProductShot } from '@/components/ProductShot';
+import { QuestionQueue } from '@/components/QuestionQueue';
 import { SourceWhisper } from '@/components/SourceWhisper';
 import { WolfEyes } from '@/components/WolfEyes';
 import { asset } from '@/lib/asset';
@@ -229,25 +230,29 @@ export default function HomePage() {
               This is the thing itself.
             </h2>
             <p className="text-lg leading-relaxed text-bone-dim">
-              Not a mockup and not a sales demo — two screens from the running product, with the
-              client&rsquo;s identity blacked out and nothing else touched. Including the parts
-              that are unflattering.
+              Two views from the running system, drawn here in our own type but carrying the real
+              numbers, unedited — including the ones that are unflattering. Client identities
+              are withheld; nothing else is.
             </p>
           </div>
 
           <div className="mt-14 space-y-16">
-            <ProductShot
-              src="/product/citations.webp"
-              alt="The AI citations screen: a share-of-voice leaderboard listing competitor domains with query coverage, visibility, trend and average position."
-              label="Measure · AI citations"
-              caption="Share of voice across the assistants. This account is new, so the honest reading is “not cited yet” — and the leaderboard names the nineteen domains being cited instead, with coverage and trend for each. That list is the work queue."
-            />
-            <ProductShot
-              src="/product/questions.webp"
-              alt="The question mining screen: a scored table of real buyer questions with source, intent, demand, difficulty and a reason for each."
-              label="Improve · Question mining"
-              caption="Real questions, mined from live search demand, competitor citations and the gaps in what you have published. Each one scored, with its intent and the reason it matters. You accept the good ones and they start being tracked on the next run."
-            />
+            <figure>
+              <CitationBoard />
+              <figcaption className="mt-4 max-w-prose text-sm leading-relaxed text-bone-dim">
+                Share of voice across the assistants. This account is new, so the honest reading
+                is &ldquo;not cited yet&rdquo; — and the board names the domains being cited
+                instead, with coverage and movement for each. That list is the work queue.
+              </figcaption>
+            </figure>
+            <figure>
+              <QuestionQueue />
+              <figcaption className="mt-4 max-w-prose text-sm leading-relaxed text-bone-dim">
+                Real questions, mined from live search demand, competitor citations and the gaps
+                in what you have published — each scored, with the system&rsquo;s own reasoning
+                attached. You accept the good ones and they start being tracked on the next run.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
