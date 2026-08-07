@@ -53,7 +53,7 @@ export const STAGES: readonly Stage[] = [
     claim: 'Gather what is actually true.',
     body: 'Live web research on the question your buyer is really asking. Every claim is bound to a named publisher and a date before it is allowed into the draft. No source, no sentence.',
     img: 'stage-research',
-    alt: 'Thousands of fine red filaments converging into a single bright core.',
+    alt: 'Hundreds of fine red threads converging from every direction onto one white-hot point.',
   },
   {
     id: 'write',
@@ -62,7 +62,7 @@ export const STAGES: readonly Stage[] = [
     claim: 'Build the artifact, not the word count.',
     body: 'The answer in the first two hundred words. Strict H1 to H2 to H3. A comparison table and a data table. A real FAQ. The shape an answer engine can parse without guessing.',
     img: 'stage-write',
-    alt: 'A dark monolith being precision-etched with a glowing red grid.',
+    alt: 'A block of black stone being cut into clean stepped tiers by a beam of red light.',
   },
   {
     id: 'publish',
@@ -71,7 +71,7 @@ export const STAGES: readonly Stage[] = [
     claim: 'Ship it as HTML a crawler can read.',
     body: 'Server-rendered pages on your own domain, with JSON-LD that matches the visible text rather than contradicting it. Per-host sitemap, robots and llms.txt generated and kept current.',
     img: 'stage-publish',
-    alt: 'A dark slab accelerating along a lit rail, leaving long light trails.',
+    alt: 'A dark transmitter tower sending concentric rings of red light out across a plain.',
   },
   {
     id: 'rank',
@@ -80,7 +80,7 @@ export const STAGES: readonly Stage[] = [
     claim: 'Hold the position once you take it.',
     body: 'Rank tracking, technical crawls, page speed, broken links and backlinks, watched continuously. Anything drifting past roughly ninety days is queued for refresh instead of quietly rotting.',
     img: 'stage-rank',
-    alt: 'A stepped monolithic structure rising into fog, its summit lit in red.',
+    alt: 'Four plinths of descending height, the tallest blazing red while the rest stay dark.',
   },
   {
     id: 'cite',
@@ -89,7 +89,7 @@ export const STAGES: readonly Stage[] = [
     claim: 'Watch the answer layer, not just the SERP.',
     body: 'Track whether assistants are citing you for the questions that matter — and, when they are not, exactly who they are citing instead. You cannot take a slot you cannot see.',
     img: 'stage-cite',
-    alt: 'A circular array of dark dishes all angled toward one bright beacon.',
+    alt: 'Three separate beams of light converging to spotlight one small glowing object.',
   },
   {
     id: 'convert',
@@ -98,7 +98,7 @@ export const STAGES: readonly Stage[] = [
     claim: 'Turn the reader into pipeline.',
     body: 'Lead capture, scoring and CRM routing. A/B tests that pick their own winner. Attribution that traces the closed deal back to the specific article that earned it.',
     img: 'stage-convert',
-    alt: 'A long dark corridor funnelling toward a single warm lit doorway.',
+    alt: 'A wide funnel of black walls narrowing to one intensely bright point of red light.',
   },
 ] as const;
 
