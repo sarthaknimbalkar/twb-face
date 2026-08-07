@@ -53,7 +53,7 @@ export const STAGES: readonly Stage[] = [
     claim: 'Find what your customers actually ask.',
     body: 'We dig up the real questions people type before they spend money in your market. And every fact we ever publish carries where it came from and when — which is exactly why people and machines end up trusting it.',
     img: 'stage-research',
-    alt: 'Hundreds of fine red threads converging from every direction onto one white-hot point.',
+    alt: 'An immense dark archive hall, one aisle lit in red leading to a single bright alcove.',
   },
   {
     id: 'write',
@@ -62,7 +62,7 @@ export const STAGES: readonly Stage[] = [
     claim: 'Answer it better than anyone else has.',
     body: 'Each piece answers the question straight away, in your voice, with the evidence attached. Structured the way Google and the AI assistants like to read — which is a technical way of saying it gets picked.',
     img: 'stage-write',
-    alt: 'A block of black stone being cut into clean stepped tiers by a beam of red light.',
+    alt: 'A bare concrete atelier at night, one long workbench lit by a single red light bar.',
   },
   {
     id: 'publish',
@@ -71,7 +71,7 @@ export const STAGES: readonly Stage[] = [
     claim: 'It goes live on your site. Done.',
     body: 'Not a draft sitting in your inbox waiting for you — finished pages, published on your own website, built so every search engine and AI assistant can read every word. You own all of it.',
     img: 'stage-publish',
-    alt: 'A dark transmitter tower sending concentric rings of red light out across a plain.',
+    alt: 'A colossal transmission tower with red light rings glowing up its full height.',
   },
   {
     id: 'rank',
@@ -80,7 +80,7 @@ export const STAGES: readonly Stage[] = [
     claim: 'Climb the rankings, then hold the spot.',
     body: 'We watch your positions, your site health and anything going stale, and fix it before it costs you a customer. A ranking is rented space — we keep paying the rent so you keep the address.',
     img: 'stage-rank',
-    alt: 'Four plinths of descending height, the tallest blazing red while the rest stay dark.',
+    alt: 'A stepped ziggurat building at night, every terrace edge-lit in red, brightest at the top.',
   },
   {
     id: 'cite',
@@ -89,7 +89,7 @@ export const STAGES: readonly Stage[] = [
     claim: 'Get recommended by the machines.',
     body: 'Every day we ask the AI assistants the questions your customers ask, and write down who got recommended. When it is not you, we know exactly who it was — and that becomes next week’s work.',
     img: 'stage-cite',
-    alt: 'Three separate beams of light converging to spotlight one small glowing object.',
+    alt: 'Three elevated skywalks from different directions converging into one central tower.',
   },
   {
     id: 'convert',
@@ -98,7 +98,7 @@ export const STAGES: readonly Stage[] = [
     claim: 'Turn readers into paying customers.',
     body: 'Calls, forms and enquiries land in your inbox with a note saying which page earned them. So when you ask “what is this actually making me?”, the answer is a number, not a shrug.',
     img: 'stage-convert',
-    alt: 'A wide funnel of black walls narrowing to one intensely bright point of red light.',
+    alt: 'Two massive stone walls angling inward toward a single doorway blazing with red light.',
   },
 ] as const;
 

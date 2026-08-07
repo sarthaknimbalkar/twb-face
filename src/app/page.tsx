@@ -237,33 +237,56 @@ export default function HomePage() {
           <p className="kicker">The console</p>
           <div className="mt-4 grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-end">
             <h2 className="font-display text-4xl leading-tight md:text-5xl">
-              This is the thing itself.
+              Here is what we see when we look at a market. Yours has one of these too.
             </h2>
             <p className="text-lg leading-relaxed text-bone-dim">
-              Two views from the running system, drawn here in our own type but carrying the real
-              numbers, unedited — including the ones that are unflattering. Client identities
-              are withheld; nothing else is.
+              These two boards belong to a real client — a local business, names withheld, numbers
+              untouched. The trades and towns will differ from yours. The situation will not:
+              somewhere, a version of these boards already exists for your market, and you are
+              either on it or you are not.
             </p>
           </div>
 
           <div className="mt-14 space-y-16">
             <figure>
+              <div className="mb-4 flex flex-wrap items-baseline justify-between gap-3">
+                <h3 className="font-display text-2xl">Who gets recommended instead of you</h3>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-faint">
+                  A real client&rsquo;s market · week one
+                </p>
+              </div>
               <CitationBoard />
               <figcaption className="mt-4 max-w-prose text-sm leading-relaxed text-bone-dim">
-                Who the machines recommend right now, in one client&rsquo;s market. The honest
-                reading for this new account is &ldquo;not you yet&rdquo; — and the board names
-                exactly who is being recommended instead. That list is the to-do list.
+                This client is a realtor, which is why the names are Zillow and Redfin. In your
+                market it will be different names — a directory, a franchise, the rival across
+                town — but somebody is collecting the customers who ask. This board tells us who,
+                question by question, so we know exactly whose spot we are taking.
               </figcaption>
             </figure>
             <figure>
+              <div className="mb-4 flex flex-wrap items-baseline justify-between gap-3">
+                <h3 className="font-display text-2xl">
+                  What your next customers are already asking
+                </h3>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-bone-faint">
+                  Two clients&rsquo; markets · live queue
+                </p>
+              </div>
               <QuestionQueue />
               <figcaption className="mt-4 max-w-prose text-sm leading-relaxed text-bone-dim">
-                Real questions, pulled from live search demand, from what rivals get recommended for, and from the gaps
-                in what you have published — each scored, with the system&rsquo;s own reasoning
-                attached. You accept the good ones and they start being tracked on the next run.
+                Every one of these is a question real people typed before spending money — with
+                the system&rsquo;s own note on why it is worth answering. Notice what they have in
+                common: the business that answers them first becomes the obvious one to call.
+                Your customers are typing their own list right now. We find it, then answer it.
               </figcaption>
             </figure>
           </div>
+
+          <p className="mt-12 max-w-2xl border-l-2 border-blood pl-4 text-sm leading-relaxed text-bone">
+            On your first call we run both of these boards for your market, live, in front of
+            you. You see who is taking your customers and what they are asking. You keep the
+            answer either way — even if you never hire us.
+          </p>
 
           {/* The reader most likely to apply is the one who just saw the machinery. Do not make
               them scroll seven more screens to act on it. */}
