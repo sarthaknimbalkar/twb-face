@@ -5,6 +5,9 @@ import type { NextConfig } from 'next';
 const basePath = process.env.BASE_PATH ?? '';
 
 const nextConfig: NextConfig = {
+  // next/image does NOT prefix basePath onto /public sources, so components read it from here
+  // via asset(). Without this every image 404s on Pages while working fine locally.
+  env: { NEXT_PUBLIC_BASE_PATH: basePath },
   // The face is a proof-of-work marketing surface: everything pre-rendered, nothing SPA.
   // Static export keeps it deployable anywhere, including GitHub Pages.
   output: 'export',

@@ -4,6 +4,7 @@ import { Counter } from '@/components/Counter';
 import { JsonLd } from '@/components/JsonLd';
 import { SourceWhisper } from '@/components/SourceWhisper';
 import { WolfEyes } from '@/components/WolfEyes';
+import { asset } from '@/lib/asset';
 import { siteJsonLd } from '@/lib/jsonld';
 import { FAQS, FOUNDING_COHORT_SEATS, SITE, STAGES } from '@/lib/site';
 
@@ -71,7 +72,7 @@ export default function HomePage() {
               headline legible lands directly on the fire and buries it. */}
           <div className="absolute inset-y-0 right-0 w-full lg:w-[62%]">
             <Image
-              src="/marketing/hero.webp"
+              src={asset('/marketing/hero.webp')}
               alt=""
               fill
               priority
@@ -181,7 +182,7 @@ export default function HomePage() {
             >
               <figure className="relative aspect-[4/3] overflow-hidden border border-night-line">
                 <Image
-                  src={`/marketing/${s.img}.webp`}
+                  src={asset(`/marketing/${s.img}.webp`)}
                   alt={s.alt}
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
@@ -245,7 +246,7 @@ export default function HomePage() {
       <section className="rule relative overflow-hidden" id="partners">
         <div className="absolute inset-0">
           <Image
-            src="/marketing/vault.webp"
+            src={asset('/marketing/vault.webp')}
             alt=""
             fill
             sizes="100vw"
@@ -282,7 +283,7 @@ export default function HomePage() {
       <section className="rule relative overflow-hidden" id="apply">
         <div className="absolute inset-0">
           <Image
-            src="/marketing/cohort.webp"
+            src={asset('/marketing/cohort.webp')}
             alt=""
             fill
             sizes="100vw"
