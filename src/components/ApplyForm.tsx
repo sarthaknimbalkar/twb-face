@@ -1,19 +1,33 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CLAIMED, FOUNDING_COHORT_SEATS, SITE } from '@/lib/site';
+
+type Path = 'operator' | 'partner';
 
 /**
  * Two audiences, one form: an operator runs a single brand, a partner resells the system to
- * their own clients. The path choice reveals the partner-only field rather than pushing
- * anyone to a second page.
+ * their own clients. The path choice reveals the partner-only field rather than pushing anyone
+ * to a second page — and it honours #apply?path=partner, so the partner CTAs elsewhere on the
+ * page land here with the right box already ticked.
  *
  * TEMPLATE NOTE: unwired by design. At integration this POSTs to the platform's intake
  * endpoint; until then it hands off to email so the page is never a dead end.
  */
 export function ApplyForm() {
-  const [path, setPath] = useState<'operator' | 'partner'>('operator');
+  const [path, setPath] = useState<Path>('operator');
   const full = CLAIMED >= FOUNDING_COHORT_SEATS;
+
+  useEffect(() => {
+    const read = () => {
+      // Hash carries the choice because the page is static: "#apply?path=partner".
+      if (window.location.hash.includes('path=partner')) setPath('partner');
+      else if (window.location.hash.includes('path=operator')) setPath('operator');
+    };
+    read();
+    window.addEventListener('hashchange', read);
+    return () => window.removeEventListener('hashchange', read);
+  }, []);
 
   return (
     <form

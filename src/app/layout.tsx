@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Fraunces, Inter, JetBrains_Mono } from 'next/font/google';
+import { BackToTop } from '@/components/BackToTop';
 import { Footer } from '@/components/Footer';
 import { Gate } from '@/components/Gate';
 import { Header } from '@/components/Header';
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="content">{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );
